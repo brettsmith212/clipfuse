@@ -1,0 +1,36 @@
+[project]
+name = "clipfuse"
+version = "0.1.0"
+description = "Composable audio highlight extraction via multi-signal fusion"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [
+    { name = "Brett Smith", email = "brettsmith212@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+]
+
+[project.optional-dependencies]
+whisper-api = ["openai"]
+anthropic = ["anthropic"]
+openai = ["openai"]
+tts = ["openai"]
+lp = ["pulp"]
+youtube = ["yt-dlp"]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ruff",
+]
+
+[build-system]
+requires = ["uv_build>=0.10.9,<0.11.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
